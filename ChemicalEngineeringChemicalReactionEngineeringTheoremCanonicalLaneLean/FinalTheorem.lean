@@ -1,0 +1,17 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.ChemicalEngineeringChemicalReactionEngineeringTheoremCanonicalLaneLean.ReactionKinetics
+import HautevilleHouse.ChemicalEngineeringChemicalReactionEngineeringTheoremCanonicalLaneLean.ChemicalEquilibrium
+import HautevilleHouse.ChemicalEngineeringChemicalReactionEngineeringTheoremCanonicalLaneLean.ReactorDesign
+
+namespace HautevilleHouse
+namespace ChemicalEngineeringChemicalReactionEngineeringTheoremCanonicalLaneLean
+
+def ConstrainedReactionClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_reaction_endgame (A : AdmissibleClass) :
+    ConstrainedReactionClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end ChemicalEngineeringChemicalReactionEngineeringTheoremCanonicalLaneLean
+end HautevilleHouse
